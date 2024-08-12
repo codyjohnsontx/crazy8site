@@ -1,21 +1,10 @@
-import { useState } from 'react'
+import '@fontsource/roboto'; 
 import './App.css'
+import Title from './components/Title';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      
-      <h1>Hello world</h1>
-      
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      
-      
-    </>
-  )
-}
-
+    <Title />
+  
+    )}      
 export default App

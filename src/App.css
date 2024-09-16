@@ -1,6 +1,9 @@
 body {
   background-color: black;
   color: white;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden; /* Prevent scrollbars */
 }
 
 .title-container {
@@ -8,28 +11,22 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  padding: 0 10px; /* Optional: Add some padding to prevent the image from touching screen edges */
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden; 
 }
 
 .title-img {
-  max-width: 70%; /* Reduce width for smaller screens */
-  height: auto;
+  max-width: 80%; /* Adjust the image size */
+  height: auto; /* Maintain the aspect ratio */
+  display: block;
+  margin: 0 auto;
 }
 
 @media (max-width: 600px) {
-  .title-container {
-    height: 50vh; /* Adjust height for smaller screens if necessary */
-  }
-
   .title-img {
-    max-width: 80%; /* Further reduce width for very small screens */
+    max-width: 80%; /* Adjust for smaller screens */
   }
 }
-
-/* .title {
-  display: flex;
-  /* align-content: center; */
-/* } */
-/* .tile-button {
-  display: flex;
-}  */

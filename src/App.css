@@ -12,7 +12,7 @@ body {
 }
 
 .title-img {
-  max-width: 80%; /* Reduce width slightly for smaller screens */
+  max-width: 70%; /* Reduce width for smaller screens */
   height: auto;
 }
 

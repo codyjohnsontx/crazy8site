@@ -2,7 +2,18 @@ const ContactPage = () => {
     return (
         <div>
             <h1>Contact Us</h1>
-            <p>This is the contact page of the site</p>
+            {/* <p>Get in contact with us!</p> */}
+            <form>
+                <label>
+                    Name:
+                    <input type="text" name="name" required />
+                </label>
+                <label>
+                    Email:
+                    <input type="email" name="name" required />
+                </label>
+                <input type="submit" value="Submit" />
+            </form>
         </div>
     );
 };

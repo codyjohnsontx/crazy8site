@@ -30,3 +30,17 @@ body {
     max-width: 80%; /* Adjust for smaller screens */
   }
 }
+
+/* Style for the logo */
+.logo-container {
+  display: flex;
+  justify-content: center; /* Horizontally center the logo */
+  align-items: center;
+  margin-top: 70px;
+  margin-bottom: 10px; /* Space between logo and NavBar */
+}
+
+.logo {
+  max-width: 300px; /* Adjust this size to make the logo small */
+  height: auto; /* Maintain aspect ratio */
+}

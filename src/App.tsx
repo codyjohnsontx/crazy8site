@@ -1,10 +1,10 @@
 import '@fontsource/roboto';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
-import NavBar from './components/NavBar';
+import NavBar from './components/NavBar/NavBar';
 import ImagePage from './components/ImagePage';
 import HomePage from './components/HomePage';
-import AboutPage from './components/AboutPage';
+import AboutPage from './components/AboutPage/AboutPage';
 import ContactPage from './components/ContactPage';
 
 function App() {

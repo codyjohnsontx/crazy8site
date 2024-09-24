@@ -1,0 +1,105 @@
+/* General Page Styling */
+.about-page {
+    text-align: center; /* Centers all text within the page */
+    padding: 20px; /* Adds some padding to the page */
+    font-family: Arial, sans-serif; /* Sets a simple, clean font */
+  }
+  
+  /* Hero Section */
+  .hero {
+    background-color: #f0f0f0; /* Light background color */
+    padding: 50px 20px; /* Adds padding around the content */
+    margin-bottom: 20px; /* Adds space below the hero section */
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem; /* Larger heading for hero section */
+    margin-bottom: 10px;
+  }
+  
+  .hero p {
+    font-size: 1.2rem; /* Slightly larger paragraph text */
+  }
+  
+  /* Mission Statement Section */
+  .mission-statement {
+    margin-bottom: 30px;
+  }
+  
+  .mission-statement h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .mission-statement p {
+    font-size: 1.1rem;
+    line-height: 1.6; /* Improves readability */
+  }
+  
+  /* Team Section */
+  .team-section {
+    margin-bottom: 30px;
+  }
+  
+  .team-member {
+    margin-top: 20px;
+  }
+  
+  .team-member h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+  
+  .team-member p {
+    font-size: 1rem;
+  }
+  
+  /* Values Section */
+  .values {
+    margin-bottom: 30px;
+  }
+  
+  .values h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .values ul {
+    list-style-type: none; /* Removes bullet points */
+    padding: 0;
+  }
+  
+  .values ul li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Call-to-Action Section */
+  .cta {
+    background-color: #e0e0e0; /* Slightly different background for emphasis */
+    padding: 30px 20px;
+  }
+  
+  .cta h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .cta p {
+    font-size: 1.1rem;
+  }
+  
+  /* Add media queries to make sure the page is mobile-friendly */
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+  
+    .hero p,
+    .mission-statement p,
+    .team-member p,
+    .cta p {
+      font-size: 1rem;
+    }
+  }
+  

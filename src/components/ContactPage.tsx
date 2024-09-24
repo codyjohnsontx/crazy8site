@@ -27,7 +27,7 @@ const ContactForm: React.FC = () => {
 
     // Conditional rendering: show the thank-you message if form is submitted
     if (isSubmitted) {
-        return <p>Thank you for reaching out. We will contact you soon!</p>;
+        return <p>Got it! We will be in contact with you soon!</p>;
     }
 
     return (

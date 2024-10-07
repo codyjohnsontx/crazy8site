@@ -7,6 +7,7 @@
   
   /* Hero Section */
   .hero {
+    color: black;
     background-color: #f0f0f0; /* Light background color */
     padding: 50px 20px; /* Adds padding around the content */
     margin-bottom: 20px; /* Adds space below the hero section */
@@ -78,6 +79,7 @@
   .cta {
     background-color: #e0e0e0; /* Slightly different background for emphasis */
     padding: 30px 20px;
+    color: black;
   }
   
   .cta h2 {

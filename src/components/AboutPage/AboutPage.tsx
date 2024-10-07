@@ -14,36 +14,22 @@ const AboutPage = () => {
             <section className="mission-statement">
                 <h2>Our Mission</h2>
                 <p>
-                    Our mission is to provide students with high-quality education and the support they need to succeed.
+                    Our mission is to provide students with high-quality instruction to advance their knowledge in both sport and self-defense based grappling.
                 </p>
             </section>
 
             {/* Meet the Team */}
             <section className="team-section">
-                <h2>Meet the Team</h2>
+                <h2>Meet your Teacher</h2>
                 <div className="team-member">
-                    <h3>Teacher Name</h3>
+                    <h3>Sergio Ortiz</h3>
+                    <img src="" alt="A picture of Sergio Ortiz" />
                     <p>
-                        Teacher Name has been working in education for over 10 years and is passionate about helping students excel.
+                        Sergio's background includes Brazilian Jiu-Jitsu and Catch Wrestling.
                     </p>
                 </div>
             </section>
 
-            {/* Values Section */}
-            <section className="values">
-                <h2>Our Values</h2>
-                <ul>
-                    <li><strong>Commitment:</strong> Dedicated to the success of our students.</li>
-                    <li><strong>Innovation:</strong> Using the latest tools and technologies to enhance learning.</li>
-                    <li><strong>Integrity:</strong> Building trust with transparency and open communication.</li>
-                </ul>
-            </section>
-
-            {/* Call to Action */}
-            <section className="cta">
-                <h2>Get in Touch</h2>
-                <p>We'd love to hear from you. Contact us to learn more about what we do!</p>
-            </section>
         </div>
     );
 };

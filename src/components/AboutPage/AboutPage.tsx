@@ -1,4 +1,3 @@
-import React from 'react';
 import './AboutPage.css'; // Assuming you'll add the CSS to this file
 
 const AboutPage = () => {
@@ -14,7 +13,7 @@ const AboutPage = () => {
             <section className="mission-statement">
                 <h2>Our Mission</h2>
                 <p>
-                    Our mission is to provide students with high-quality instruction to advance their knowledge in both sport and self-defense based grappling.
+                    Our mission is to provide students with high-quality instruction to advance their knowledge in both sport and self-defense-based grappling.
                 </p>
             </section>
 
@@ -29,7 +28,6 @@ const AboutPage = () => {
                     </p>
                 </div>
             </section>
-
         </div>
     );
 };

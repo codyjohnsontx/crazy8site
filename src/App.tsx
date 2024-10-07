@@ -34,7 +34,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <NavBar />
           {/* Logo below the navbar */}
           <div className="logo-container">
-            <img src="assets/crazy8logo.jpeg" alt="Logo" className="logo" />
+            <img src="/assets/crazy8logo.jpeg" alt="Logo" className="logo" />
           </div>
         </>
       )}

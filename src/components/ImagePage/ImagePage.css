@@ -1,0 +1,22 @@
+.title-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center;
+}
+
+.image-link {
+    display: block;
+    margin-bottom: 10px; /* Space between image and text */
+}
+
+.title-img {
+    max-width: 100%; /* Make sure the image is responsive */
+    height: auto;
+}
+
+.under-construction {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #ff6347; /* Adjust the color as needed */
+}

@@ -1,16 +1,19 @@
 import { Link } from 'react-router-dom';
-import '../App.css'; //  import the CSS file
+import './ImagePage.css';
 
 const ImagePage = () => {
     return (
         <div className="title-container">
-            <Link to="/home">
+            <Link to="/home" className="image-link">
                 <img
                     src="/assets/crazy8logo.jpeg" // current image path
                     alt="Click to enter"
-                    className="title-img" // Apply the class for styling
+                    className="title-img"
                 />
             </Link>
+            <h1 className="under-construction">
+                This site is currently under construction. Check back soon!
+            </h1>
         </div>
     );
 };

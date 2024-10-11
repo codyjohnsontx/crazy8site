@@ -6,6 +6,8 @@ import ImagePage from './components/ImagePage/ImagePage';
 import HomePage from './components/HomePage';
 import AboutPage from './components/AboutPage/AboutPage';
 import ContactPage from './components/ContactPage';
+import SchedulePage from './components/SchedulePage/SchedulePage';
+
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
           <Route path="/home" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/schedule" element={<SchedulePage />} />
+
         </Routes>
       </Layout>
     </Router>

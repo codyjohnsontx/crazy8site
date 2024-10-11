@@ -1,4 +1,10 @@
-/* General Page Styling */
+html, body {
+  overflow-y: auto; /* Allows vertical scrolling */
+  height: 100%; /* Ensures body height covers the entire page */
+}
+
+
+ /* General Styling  */
 .about-page {
     text-align: center; /* Centers all text within the page */
     padding: 20px; /* Adds some padding to the page */
@@ -105,3 +111,6 @@
     }
   }
   
+  .about-p{
+    padding: 20px;
+  }

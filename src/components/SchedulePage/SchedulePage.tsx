@@ -1,4 +1,3 @@
-import React from 'react'
 import './SchedulePage.css';
 
 const SchedulePage = () => {

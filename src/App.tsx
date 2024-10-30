@@ -19,7 +19,6 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/schedule" element={<SchedulePage />} />
-
         </Routes>
       </Layout>
     </Router>

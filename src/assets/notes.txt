@@ -1,0 +1,4 @@
+refactor routes vs components
+routes will be pages
+
+research scss complier

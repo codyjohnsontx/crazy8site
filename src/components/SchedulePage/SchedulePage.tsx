@@ -33,8 +33,8 @@ const SchedulePage = () => {
             </tr>
           </thead>
           <tbody>
-            {schedule.map((s, i) => (
-              <tr key={i} className="border-b border-zinc-900">
+            {schedule.map((s) => (
+              <tr key={`${s.day}-${s.time}`} className="border-b border-zinc-900">
                 <td className="py-4 pr-6 font-medium">{s.day}</td>
                 <td className="py-4 pr-6 text-zinc-300">{s.time}</td>
                 <td className="py-4 pr-6">{s.name}</td>

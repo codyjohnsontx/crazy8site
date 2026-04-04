@@ -16,18 +16,19 @@ const SchedulePage = () => {
 
       <div className="mt-10 overflow-x-auto">
         <table className="w-full text-left">
+          <caption className="sr-only">Class schedule</caption>
           <thead>
             <tr className="border-b border-zinc-800">
-              <th className="py-3 pr-6 text-sm text-zinc-400 uppercase tracking-wider font-medium">
+              <th scope="col" className="py-3 pr-6 text-sm text-zinc-400 uppercase tracking-wider font-medium">
                 Day
               </th>
-              <th className="py-3 pr-6 text-sm text-zinc-400 uppercase tracking-wider font-medium">
+              <th scope="col" className="py-3 pr-6 text-sm text-zinc-400 uppercase tracking-wider font-medium">
                 Time
               </th>
-              <th className="py-3 pr-6 text-sm text-zinc-400 uppercase tracking-wider font-medium">
+              <th scope="col" className="py-3 pr-6 text-sm text-zinc-400 uppercase tracking-wider font-medium">
                 Class
               </th>
-              <th className="py-3 text-sm text-zinc-400 uppercase tracking-wider font-medium">
+              <th scope="col" className="py-3 text-sm text-zinc-400 uppercase tracking-wider font-medium">
                 Instructor
               </th>
             </tr>

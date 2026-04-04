@@ -19,14 +19,14 @@ const AboutPage = () => {
     <div>
       {/* Instructor */}
       <section className="flex flex-col md:flex-row gap-12 max-w-5xl mx-auto px-4 py-16">
-        <div className="md:w-2/5">
+        <div className="md:w-3/5">
           <img
             src="/assets/Sergio.png"
             alt="Sergio Ortiz"
             className="w-full"
           />
         </div>
-        <div className="md:w-3/5">
+        <div className="md:w-2/5">
           <h2 className="text-sm text-zinc-400 uppercase tracking-wider">Meet Your Instructor</h2>
           <h1 className="text-3xl font-bold mt-2">Sergio &ldquo;Coco&rdquo; Ortiz</h1>
           <p className="mt-6 text-zinc-300 leading-relaxed">{text.sergio}</p>

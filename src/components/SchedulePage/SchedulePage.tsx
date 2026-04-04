@@ -6,20 +6,13 @@ interface ClassSession {
 }
 
 const schedule: ClassSession[] = [
-  { day: 'Monday', time: '6:00 PM', name: 'No-Gi BJJ', instructor: 'Sergio Ortiz' },
-  { day: 'Monday', time: '7:30 PM', name: 'Catch Wrestling', instructor: 'Sergio Ortiz' },
-  { day: 'Tuesday', time: '6:00 PM', name: 'Gi BJJ', instructor: 'Sergio Ortiz' },
-  { day: 'Wednesday', time: '6:00 PM', name: 'No-Gi BJJ', instructor: 'Sergio Ortiz' },
-  { day: 'Thursday', time: '6:00 PM', name: 'Gi BJJ', instructor: 'Sergio Ortiz' },
-  { day: 'Friday', time: '5:30 PM', name: 'Open Mat', instructor: 'Sergio Ortiz' },
-  { day: 'Saturday', time: '10:00 AM', name: 'Open Mat', instructor: 'Sergio Ortiz' },
+  { day: 'Friday', time: '12:00 PM', name: 'Grappling (BJJ / Catch Wrestling)', instructor: 'Sergio Ortiz' },
 ]
 
 const SchedulePage = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 py-16">
       <h1 className="text-3xl font-bold uppercase tracking-wider">Class Schedule</h1>
-      <p className="mt-2 text-zinc-400">All levels welcome unless noted otherwise.</p>
 
       <div className="mt-10 overflow-x-auto">
         <table className="w-full text-left">

@@ -21,6 +21,10 @@ const normalizeContactErrorMessage = (error: unknown) => {
 }
 
 const ContactPage = () => {
+  if (!isContactFormConfigured) {
+    throw new Error('Missing VITE_WEB3FORMS_ACCESS_KEY. Configure the contact form before rendering ContactPage.')
+  }
+
   const [formData, setFormData] = useState(emptyForm)
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
@@ -130,9 +134,7 @@ const ContactPage = () => {
                   : 'We will follow up after reviewing your message.'}
               </p>
             </form>
-          ) : (() => {
-            throw new Error('Missing VITE_WEB3FORMS_ACCESS_KEY. Configure the contact form before rendering ContactPage.')
-          })()}
+          ) : null}
         </div>
       </div>
     </div>

@@ -52,6 +52,6 @@ export async function submitContactForm(values: ContactFormValues) {
   }
 
   if (!response.ok || !data?.success) {
-    throw new Error(data?.message || 'Unable to send your message right now. Please try again.')
+    throw new Error(data?.message || 'Unable to send your message through the form right now. Please try again.')
   }
 }

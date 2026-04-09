@@ -2,17 +2,16 @@ import { Link } from 'react-router-dom'
 import { disciplines } from '../data/disciplines'
 import { classSchedule, siteDetails } from '../data/site'
 
-const highlights = [
-  { label: 'Lead Coach', value: siteDetails.instructorName },
-  { label: 'Location', value: siteDetails.city },
-  { label: 'Schedule', value: 'Fridays at 12:00 PM' },
-]
-
 const HomePage = () => {
   const featuredSession = classSchedule.length > 0 ? classSchedule[0] : undefined
   const featuredScheduleLabel = featuredSession
     ? `${featuredSession.day} at ${featuredSession.time} in ${siteDetails.city}`
     : 'Schedule TBD'
+  const highlights = [
+    { label: 'Lead Coach', value: siteDetails.instructorName },
+    { label: 'Location', value: siteDetails.city },
+    { label: 'Schedule', value: featuredScheduleLabel },
+  ]
 
   return (
     <div className="pb-16">

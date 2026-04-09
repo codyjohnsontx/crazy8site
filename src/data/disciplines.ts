@@ -21,6 +21,12 @@ export const disciplinesBySlug: Record<DisciplineSlug, BaseDiscipline> = {
   },
 }
 
-export const disciplineOrder: DisciplineSlug[] = ['bjj', 'catch-wrestling']
+function defineDisciplineOrder<const T extends readonly DisciplineSlug[]>(
+  order: Exclude<DisciplineSlug, T[number]> extends never ? T : never,
+) {
+  return order
+}
+
+export const disciplineOrder = defineDisciplineOrder(['bjj', 'catch-wrestling'] as const)
 
 export const disciplines = disciplineOrder.map((slug) => disciplinesBySlug[slug])

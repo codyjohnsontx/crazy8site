@@ -3,6 +3,9 @@ import { classSchedule, siteDetails } from '../../data/site'
 
 const SchedulePage = () => {
   const featuredSession = classSchedule[0] ?? null
+  const featuredHeading = featuredSession
+    ? `Train with us ${featuredSession.day.toLowerCase()} at ${featuredSession.time.toLowerCase()}.`
+    : 'Check back soon for the next public class.'
 
   return (
     <div className="page-shell pb-16 pt-14 sm:pt-16">
@@ -10,7 +13,7 @@ const SchedulePage = () => {
         <div className="border-t border-white/10 pt-6 md:pt-8">
           <p className="eyebrow">Current public class</p>
           <h1 className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-            Train with us every Friday at noon.
+            {featuredHeading}
           </h1>
           <p className="mt-5 max-w-xl text-base leading-7 text-zinc-300">
             The current schedule is deliberately focused. If you want details on your first visit, location logistics, or whether the class is a fit, reach out before you drop in.

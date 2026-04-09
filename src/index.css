@@ -31,6 +31,7 @@
 
   body {
     @apply min-h-screen m-0 bg-black text-white;
+
     background-image:
       radial-gradient(circle at top, rgba(255, 99, 71, 0.18), transparent 24rem),
       linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 16rem);

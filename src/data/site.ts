@@ -27,6 +27,6 @@ export const classSchedule: ClassSession[] = [
     day: 'Friday',
     time: '12:00 PM',
     name: 'Grappling (BJJ / Catch Wrestling)',
-    instructor: 'Sergio Ortiz',
+    instructor: siteDetails.instructorName,
   },
 ]

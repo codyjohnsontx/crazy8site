@@ -37,7 +37,8 @@ export async function submitContactForm(values: ContactFormValues) {
       throw new Error('The contact request timed out. Please try again or contact us directly.')
     }
 
-    throw error
+    console.error('Contact form request failed', error)
+    throw new Error('There was a problem sending your message. Please try again or contact us directly.')
   } finally {
     window.clearTimeout(timeoutId)
   }

@@ -1,26 +1,22 @@
 import { useParams, Link } from 'react-router-dom'
+import { disciplinesBySlug } from '../data/disciplines'
 
-interface DisciplineDetail {
-  name: string
-  description: string
+type DisciplineSlug = keyof typeof disciplinesBySlug
+type DisciplineDetail = (typeof disciplinesBySlug)[DisciplineSlug] & {
   history: string
   whatToExpect: string
 }
 
-const disciplineData: Record<string, DisciplineDetail> = {
+const disciplineData: Record<DisciplineSlug, DisciplineDetail> = {
   bjj: {
-    name: 'Brazilian Jiu-Jitsu',
-    description:
-      'Ground-based grappling focused on submissions, positional control, and leverage over strength.',
+    ...disciplinesBySlug.bjj,
     history:
       'Brazilian Jiu-Jitsu evolved from Kodokan Judo and Japanese jujutsu, refined by the Gracie family in Brazil throughout the 20th century. It gained worldwide recognition after Royce Gracie dominated the early UFC tournaments, proving that technique and leverage could overcome size and strength.',
     whatToExpect:
       'Classes focus on no-gi grappling. Positional drilling, live sparring (rolling), and technique instruction. You will learn guard passes, sweeps, submissions, and escapes. All experience levels train together with instruction scaled to your ability.',
   },
   'catch-wrestling': {
-    name: 'Catch Wrestling',
-    description:
-      'Aggressive, submission-oriented wrestling emphasizing pins, cranks, and dominant positioning.',
+    ...disciplinesBySlug['catch-wrestling'],
     history:
       'Catch-as-catch-can wrestling originated in Britain and became wildly popular in America through carnival and professional wrestling circuits in the late 1800s and early 1900s. It is the ancestor of modern professional wrestling but retains its roots as a legitimate combat grappling system.',
     whatToExpect:
@@ -30,7 +26,8 @@ const disciplineData: Record<string, DisciplineDetail> = {
 
 const DisciplinePage = () => {
   const { slug } = useParams<{ slug: string }>()
-  const discipline = slug ? disciplineData[slug] : undefined
+  const discipline =
+    slug && slug in disciplineData ? disciplineData[slug as DisciplineSlug] : undefined
 
   if (!discipline) {
     return (

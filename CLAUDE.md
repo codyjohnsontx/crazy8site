@@ -1,3 +1,5 @@
+# CLAUDE
+
 ## Purpose
 
 This file is read automatically by **Claude Code**. Rules here apply to all Claude Code sessions in this repository.

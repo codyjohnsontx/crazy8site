@@ -1,25 +1,7 @@
 import { Link } from 'react-router-dom'
+import { disciplinesBySlug } from '../data/disciplines'
 
-interface Discipline {
-  name: string
-  slug: string
-  description: string
-}
-
-const disciplines: Discipline[] = [
-  {
-    name: 'Brazilian Jiu-Jitsu',
-    slug: 'bjj',
-    description:
-      'Ground-based grappling focused on submissions, positional control, and leverage over strength.',
-  },
-  {
-    name: 'Catch Wrestling',
-    slug: 'catch-wrestling',
-    description:
-      'Aggressive, submission-oriented wrestling emphasizing pins, cranks, and dominant positioning.',
-  },
-]
+const disciplines = Object.values(disciplinesBySlug)
 
 const HomePage = () => {
   return (

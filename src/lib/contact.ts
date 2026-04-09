@@ -11,7 +11,7 @@ export const isContactFormConfigured = accessKey.length > 0
 
 export async function submitContactForm(values: ContactFormValues) {
   if (!isContactFormConfigured) {
-    throw new Error('The contact form is not configured yet. Please email or call us directly.')
+    throw new Error('The contact form is not configured yet. Please try again through the form shortly.')
   }
 
   const controller = new AbortController()
@@ -34,11 +34,11 @@ export async function submitContactForm(values: ContactFormValues) {
     })
   } catch (error) {
     if (error instanceof DOMException && error.name === 'AbortError') {
-      throw new Error('The contact request timed out. Please try again or contact us directly.')
+      throw new Error('The contact request timed out. Please try again through the form shortly.')
     }
 
     console.error('Contact form request failed', error)
-    throw new Error('There was a problem sending your message. Please try again or contact us directly.')
+    throw new Error('There was a problem sending your message. Please try again through the form shortly.')
   } finally {
     window.clearTimeout(timeoutId)
   }

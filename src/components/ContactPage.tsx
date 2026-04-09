@@ -7,6 +7,19 @@ const emptyForm = {
   message: '',
 }
 
+const normalizeContactErrorMessage = (error: unknown) => {
+  const fallbackMessage = 'Something went wrong. Please try again through the form in a moment.'
+
+  if (!(error instanceof Error)) {
+    return fallbackMessage
+  }
+
+  return error.message
+    .replace(/please email or call us directly\.?/gi, 'Please try again through the form shortly.')
+    .replace(/please try again or contact us directly\.?/gi, 'Please try again through the form shortly.')
+    .replace(/contact us directly/gi, 'use the form again')
+}
+
 const ContactPage = () => {
   const [formData, setFormData] = useState(emptyForm)
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
@@ -28,11 +41,7 @@ const ContactPage = () => {
       setFormData(emptyForm)
     } catch (error) {
       setStatus('error')
-      setErrorMessage(
-        error instanceof Error
-          ? error.message
-          : 'Something went wrong. Please try again later.',
-      )
+      setErrorMessage(normalizeContactErrorMessage(error))
     }
   }
 
@@ -121,14 +130,9 @@ const ContactPage = () => {
                   : 'We will follow up after reviewing your message.'}
               </p>
             </form>
-          ) : (
-            <div className="mt-6 border-l border-white/15 pl-5">
-              <h2 className="text-2xl font-semibold text-white">The contact form is temporarily unavailable.</h2>
-              <p className="mt-3 text-sm leading-7 text-zinc-300">
-                Please check back shortly when the form is available again.
-              </p>
-            </div>
-          )}
+          ) : (() => {
+            throw new Error('Missing VITE_WEB3FORMS_ACCESS_KEY. Configure the contact form before rendering ContactPage.')
+          })()}
         </div>
       </div>
     </div>

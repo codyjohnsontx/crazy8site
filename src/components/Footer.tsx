@@ -13,14 +13,9 @@ const Footer = () => {
           <div className="mx-auto">
             <h3 className="text-sm font-medium uppercase tracking-[0.25em] text-zinc-400">Contact</h3>
             <p className="mt-4 text-sm text-zinc-400">{siteDetails.city}</p>
-            <div className="mt-5 space-y-2 text-sm text-zinc-300">
-              <a href={`mailto:${siteDetails.email}`} className="block transition-colors hover:text-brand-red">
-                {siteDetails.email}
-              </a>
-              <a href={`tel:${siteDetails.phone.replace(/[^+\d]/g, '')}`} className="block transition-colors hover:text-brand-red">
-                {siteDetails.phone}
-              </a>
-            </div>
+            <Link to="/contact" className="mt-5 inline-block text-sm text-zinc-300 transition-colors hover:text-brand-red">
+              Use the contact form
+            </Link>
           </div>
 
           <div className="mx-auto">

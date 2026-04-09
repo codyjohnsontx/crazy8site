@@ -19,16 +19,8 @@ const NavBar = () => {
   return (
     <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl">
       <div className="page-shell flex items-center justify-between py-3">
-        <Link to="/" className="flex items-center gap-3">
+        <Link to="/" className="flex items-center">
           <img src="/assets/crazy8logo.jpeg" alt={siteDetails.name} className="h-12 w-12 rounded-full" />
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-white">
-              Crazy 8
-            </p>
-            <p className="text-xs uppercase tracking-[0.28em] text-zinc-400">
-              Friday 12:00 PM
-            </p>
-          </div>
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">

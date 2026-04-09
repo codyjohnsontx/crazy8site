@@ -8,8 +8,6 @@ export interface ClassSession {
 export const siteDetails = {
   name: 'Crazy 8 Grappling Club',
   city: 'San Marcos, Texas',
-  email: 'info@crazy8grappling.com',
-  phone: '(512) 555-0188',
   instructorName: 'Sergio "Coco" Ortiz',
   instructorSummary:
     'Black belt in BJJ with 17 years on the mats, 22 years in law enforcement, and a teaching style built around pressure, control, and practical grappling.',

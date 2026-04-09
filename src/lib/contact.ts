@@ -52,6 +52,10 @@ export async function submitContactForm(values: ContactFormValues) {
   }
 
   if (!response.ok || !data?.success) {
-    throw new Error(data?.message || 'Unable to send your message through the form right now. Please try again.')
+    console.error('Contact form provider rejected the request', {
+      status: response.status,
+      message: data?.message ?? null,
+    })
+    throw new Error('Unable to send your message through the form right now. Please try again.')
   }
 }

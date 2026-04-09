@@ -2,14 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .page-shell {
+    @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.35em] text-brand-red;
+  }
+
+  .cta-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-brand-red px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-black transition hover:-translate-y-0.5 hover:bg-white;
+  }
+
+  .cta-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-white/15 px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:-translate-y-0.5 hover:border-brand-red hover:text-brand-red;
+  }
+}
+
 @layer base {
+  :root {
+    color-scheme: dark;
+  }
+
   html {
-    @apply bg-black text-white antialiased;
+    @apply bg-black text-white antialiased scroll-smooth;
   }
+
   body {
-    @apply min-h-screen m-0;
+    @apply min-h-screen m-0 bg-black text-white;
+
+    background-image:
+      radial-gradient(circle at top, rgba(255, 99, 71, 0.18), transparent 24rem),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 16rem);
   }
+
+  #root {
+    @apply min-h-screen;
+  }
+
   a {
     @apply text-inherit no-underline;
+  }
+
+  img {
+    @apply block max-w-full;
+  }
+
+  ::selection {
+    @apply bg-brand-red text-black;
   }
 }

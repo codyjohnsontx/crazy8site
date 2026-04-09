@@ -1,37 +1,58 @@
 import { Link } from 'react-router-dom'
+import { disciplines } from '../data/disciplines'
+import { siteDetails } from '../data/site'
 
 const Footer = () => {
+  const disciplineDetailsTarget =
+    disciplines.find((discipline) => discipline.slug === 'bjj') ?? disciplines[0]
+
   return (
-    <footer className="border-t border-zinc-900 mt-16 py-12 px-4">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between gap-10">
-        <div>
-          <h3 className="text-sm uppercase tracking-widest text-zinc-400 font-medium">Contact</h3>
-          <p className="mt-3 text-zinc-300">info@crazy8grappling.com</p>
-          <p className="text-zinc-300">(512) 555-0188</p>
-        </div>
-        <div>
-          <h3 className="text-sm uppercase tracking-widest text-zinc-400 font-medium">Location</h3>
-          <p className="mt-3 text-zinc-300">San Marcos, Texas</p>
-        </div>
-        <div>
-          <h3 className="text-sm uppercase tracking-widest text-zinc-400 font-medium">Links</h3>
-          <ul className="mt-3 space-y-2">
-            <li>
-              <Link to="/about" className="text-zinc-300 hover:text-brand-red transition-colors">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link to="/schedule" className="text-zinc-300 hover:text-brand-red transition-colors">
-                Schedule
-              </Link>
-            </li>
-            <li>
-              <Link to="/contact" className="text-zinc-300 hover:text-brand-red transition-colors">
-                Contact
-              </Link>
-            </li>
-          </ul>
+    <footer className="border-t border-white/10 py-14">
+      <div className="page-shell">
+        <div className="mx-auto grid max-w-2xl justify-center gap-x-24 gap-y-10 text-center md:grid-cols-2">
+          <div className="mx-auto">
+            <h3 className="text-sm font-medium uppercase tracking-[0.25em] text-zinc-400">Contact</h3>
+            <p className="mt-4 text-sm text-zinc-400">{siteDetails.city}</p>
+            <div className="mt-5 space-y-2 text-sm text-zinc-300">
+              <a href={`mailto:${siteDetails.email}`} className="block transition-colors hover:text-brand-red">
+                {siteDetails.email}
+              </a>
+              <a href={`tel:${siteDetails.phone.replace(/[^+\d]/g, '')}`} className="block transition-colors hover:text-brand-red">
+                {siteDetails.phone}
+              </a>
+            </div>
+          </div>
+
+          <div className="mx-auto">
+            <h3 className="text-sm font-medium uppercase tracking-[0.25em] text-zinc-400">Explore</h3>
+            <ul className="mt-4 space-y-3">
+              <li>
+                <Link to="/about" className="text-sm text-zinc-300 transition-colors hover:text-brand-red">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link to="/schedule" className="text-sm text-zinc-300 transition-colors hover:text-brand-red">
+                  Schedule
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-sm text-zinc-300 transition-colors hover:text-brand-red">
+                  Contact
+                </Link>
+              </li>
+              {disciplineDetailsTarget && (
+                <li>
+                  <Link
+                    to={`/disciplines/${disciplineDetailsTarget.slug}`}
+                    className="text-sm text-zinc-300 transition-colors hover:text-brand-red"
+                  >
+                    Discipline Details
+                  </Link>
+                </li>
+              )}
+            </ul>
+          </div>
         </div>
       </div>
     </footer>

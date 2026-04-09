@@ -1,7 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
-import { disciplinesBySlug } from '../data/disciplines'
+import { DisciplineSlug, disciplinesBySlug } from '../data/disciplines'
+import { classSchedule, siteDetails } from '../data/site'
 
-type DisciplineSlug = keyof typeof disciplinesBySlug
 type DisciplineDetail = (typeof disciplinesBySlug)[DisciplineSlug] & {
   history: string
   whatToExpect: string
@@ -28,10 +28,11 @@ const DisciplinePage = () => {
   const { slug } = useParams<{ slug: string }>()
   const discipline =
     slug && slug in disciplineData ? disciplineData[slug as DisciplineSlug] : undefined
+  const featuredSession = classSchedule.length > 0 ? classSchedule[0] : undefined
 
   if (!discipline) {
     return (
-      <div className="max-w-3xl mx-auto px-4 py-16 text-center">
+      <div className="page-shell py-20 text-center">
         <h1 className="text-3xl font-bold">Discipline not found</h1>
         <Link to="/" className="mt-4 inline-block text-brand-red hover:text-white transition-colors">
           &larr; Back to Home
@@ -41,38 +42,60 @@ const DisciplinePage = () => {
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-16">
-      <Link to="/" className="text-sm text-zinc-400 hover:text-brand-red transition-colors">
+    <div className="page-shell pb-16 pt-14 sm:pt-16">
+      <Link to="/" className="text-sm uppercase tracking-[0.22em] text-zinc-400 transition-colors hover:text-brand-red">
         &larr; Back to Home
       </Link>
 
-      <h1 className="text-4xl font-bold uppercase tracking-tight mt-6">{discipline.name}</h1>
-      <p className="mt-4 text-xl text-zinc-400 leading-relaxed">{discipline.description}</p>
+      <section className="mt-6 grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+        <div>
+          <p className="eyebrow">Discipline detail</p>
+          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+            {discipline.name}
+          </h1>
+          <p className="mt-5 max-w-2xl text-base leading-7 text-zinc-300 sm:text-lg">
+            {discipline.description}
+          </p>
 
-      <section className="border-t border-zinc-900 mt-12 pt-12">
-        <h2 className="text-2xl font-bold uppercase tracking-wider">History</h2>
-        <p className="mt-4 text-zinc-300 leading-relaxed">{discipline.history}</p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link to="/schedule" className="cta-primary">
+              View Schedule
+            </Link>
+            <Link to="/contact" className="cta-secondary">
+              Ask About Your First Class
+            </Link>
+          </div>
+        </div>
+
+        <div className="border-t border-white/10 pt-6 md:pt-8">
+          <p className="text-[11px] uppercase tracking-[0.28em] text-zinc-500">Current class window</p>
+          {featuredSession ? (
+            <>
+              <p className="mt-4 text-2xl font-semibold text-white">
+                {featuredSession.day}, {featuredSession.time}
+              </p>
+              <p className="mt-3 text-sm leading-7 text-zinc-300">{siteDetails.primarySessionSummary}</p>
+              <div className="mt-6 space-y-3 text-sm text-zinc-400">
+                <p>Coach: {featuredSession.instructor}</p>
+                <p>Location: {siteDetails.city}</p>
+              </div>
+            </>
+          ) : (
+            <p className="mt-4 max-w-sm text-sm leading-7 text-zinc-400">
+              No current class window is listed right now. Contact the club for the latest training schedule.
+            </p>
+          )}
+        </div>
       </section>
 
-      <section className="border-t border-zinc-900 mt-12 pt-12">
-        <h2 className="text-2xl font-bold uppercase tracking-wider">What to Expect</h2>
-        <p className="mt-4 text-zinc-300 leading-relaxed">{discipline.whatToExpect}</p>
-      </section>
-
-      <section className="border-t border-zinc-900 mt-12 pt-12">
-        <div className="flex gap-x-12 text-lg">
-          <Link
-            to="/schedule"
-            className="text-brand-red hover:text-white transition-colors font-semibold"
-          >
-            View Schedule &rarr;
-          </Link>
-          <Link
-            to="/contact"
-            className="text-brand-red hover:text-white transition-colors font-semibold"
-          >
-            Get in Touch &rarr;
-          </Link>
+      <section className="mt-10 grid gap-6 lg:grid-cols-2">
+        <div className="border-t border-white/10 pt-6 md:pt-8">
+          <p className="eyebrow">History</p>
+          <p className="mt-5 text-sm leading-7 text-zinc-300 sm:text-base">{discipline.history}</p>
+        </div>
+        <div className="border-t border-white/10 pt-6 md:pt-8">
+          <p className="eyebrow">What to expect</p>
+          <p className="mt-5 text-sm leading-7 text-zinc-300 sm:text-base">{discipline.whatToExpect}</p>
         </div>
       </section>
     </div>

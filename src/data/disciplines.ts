@@ -1,10 +1,12 @@
+export type DisciplineSlug = 'bjj' | 'catch-wrestling'
+
 export interface BaseDiscipline {
   name: string
-  slug: string
+  slug: DisciplineSlug
   description: string
 }
 
-export const disciplinesBySlug = {
+export const disciplinesBySlug: Record<DisciplineSlug, BaseDiscipline> = {
   bjj: {
     name: 'Brazilian Jiu-Jitsu',
     slug: 'bjj',
@@ -17,4 +19,8 @@ export const disciplinesBySlug = {
     description:
       'Aggressive, submission-oriented wrestling emphasizing pins, cranks, and dominant positioning.',
   },
-} as const satisfies Record<string, BaseDiscipline>
+}
+
+export const disciplineOrder: DisciplineSlug[] = ['bjj', 'catch-wrestling']
+
+export const disciplines = disciplineOrder.map((slug) => disciplinesBySlug[slug])

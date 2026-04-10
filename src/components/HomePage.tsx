@@ -4,14 +4,6 @@ import { classSchedule, siteDetails } from '../data/site'
 
 const HomePage = () => {
   const featuredSession = classSchedule.length > 0 ? classSchedule[0] : undefined
-  const featuredScheduleLabel = featuredSession
-    ? `${featuredSession.day} at ${featuredSession.time} in ${siteDetails.city}`
-    : 'Schedule TBD'
-  const highlights = [
-    { label: 'Lead Coach', value: siteDetails.instructorName },
-    { label: 'Location', value: siteDetails.city },
-    { label: 'Schedule', value: featuredScheduleLabel },
-  ]
 
   return (
     <div className="pb-16">
@@ -30,18 +22,6 @@ const HomePage = () => {
               <Link to="/contact" className="cta-primary">
                 Book a Visit
               </Link>
-              <p className="mt-4 text-sm uppercase tracking-[0.2em] text-zinc-500">
-                {featuredScheduleLabel}
-              </p>
-            </div>
-
-            <div className="mt-10 grid gap-4 sm:grid-cols-3">
-              {highlights.map((item) => (
-                <div key={item.label} className="border-l border-white/15 pl-4">
-                  <p className="text-[11px] uppercase tracking-[0.28em] text-zinc-500">{item.label}</p>
-                  <p className="mt-3 text-sm font-medium text-white">{item.value}</p>
-                </div>
-              ))}
             </div>
           </div>
 

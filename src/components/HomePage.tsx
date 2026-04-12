@@ -12,10 +12,10 @@ const HomePage = () => {
           <div className="max-w-2xl">
             <p className="eyebrow">San Marcos Grappling Club</p>
             <h1 className="mt-5 text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Sharpen your grappling with pressure-first Friday training.
+              Build better grappling habits with focused Friday training.
             </h1>
             <p className="mt-6 max-w-xl text-base leading-7 text-zinc-300 sm:text-lg">
-              {siteDetails.name} is built for students who want technical no-gi instruction, harder positional pressure, and a clear path to more confident grappling.
+              {siteDetails.name} is built for students who want technical no-gi instruction, stronger positional pressure, and a clear path to more confident grappling.
             </p>
 
             <div className="mt-8">

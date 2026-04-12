@@ -9,8 +9,8 @@ const Footer = () => {
   return (
     <footer className="border-t border-white/10 py-14">
       <div className="page-shell">
-        <div className="mx-auto grid max-w-2xl justify-center gap-x-24 gap-y-10 text-center md:grid-cols-2">
-          <div className="mx-auto">
+        <div className="mx-auto grid max-w-5xl items-center gap-10 text-center md:grid-cols-[1fr_auto_1fr] md:text-left">
+          <div className="mx-auto md:mx-0">
             <h3 className="text-sm font-medium uppercase tracking-[0.25em] text-zinc-400">Contact</h3>
             <p className="mt-4 text-sm text-zinc-400">{siteDetails.city}</p>
             <Link to="/contact" className="mt-5 inline-block text-sm text-zinc-300 transition-colors hover:text-brand-red">
@@ -18,7 +18,15 @@ const Footer = () => {
             </Link>
           </div>
 
-          <div className="mx-auto">
+          <Link to="/" className="mx-auto block w-full max-w-md transition-transform hover:scale-[1.01]">
+            <img
+              src="/assets/crazy8logo.jpeg"
+              alt={`${siteDetails.name} logo`}
+              className="mx-auto w-full"
+            />
+          </Link>
+
+          <div className="mx-auto md:mx-0 md:justify-self-end md:text-right">
             <h3 className="text-sm font-medium uppercase tracking-[0.25em] text-zinc-400">Explore</h3>
             <ul className="mt-4 space-y-3">
               <li>

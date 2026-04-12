@@ -23,6 +23,9 @@ const Footer = () => {
               src="/assets/crazy8logo.jpeg"
               alt={`${siteDetails.name} logo`}
               className="mx-auto w-full"
+              loading="lazy"
+              decoding="async"
+              fetchPriority="low"
             />
           </Link>
 

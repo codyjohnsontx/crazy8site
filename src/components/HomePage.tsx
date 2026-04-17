@@ -30,7 +30,7 @@ const HomePage = () => {
             <div className="relative overflow-hidden border border-white/10 p-3">
               <img
                 src="/assets/Sergio.png"
-                alt={`Head instructor ${siteDetails.instructorName} teaching no-gi Brazilian Jiu-Jitsu in San Marcos, Texas`}
+                alt={`Head instructor ${siteDetails.instructorName} teaching no-gi Brazilian Jiu-Jitsu in ${siteDetails.city}`}
                 width={499}
                 height={333}
                 loading="eager"

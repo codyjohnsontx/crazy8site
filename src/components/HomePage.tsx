@@ -30,7 +30,12 @@ const HomePage = () => {
             <div className="relative overflow-hidden border border-white/10 p-3">
               <img
                 src="/assets/Sergio.png"
-                alt="Sergio Ortiz"
+                alt={`Head instructor ${siteDetails.instructorName} teaching no-gi Brazilian Jiu-Jitsu in ${siteDetails.city}`}
+                width={499}
+                height={333}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
                 className="aspect-[4/5] w-full rounded-[1.35rem] object-cover"
               />
               <div className="grid gap-3 px-3 pb-3 pt-5 sm:grid-cols-[1fr_auto] sm:items-end">

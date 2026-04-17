@@ -21,10 +21,6 @@ const normalizeContactErrorMessage = (error: unknown) => {
 }
 
 const ContactPage = () => {
-  if (!isContactFormConfigured) {
-    throw new Error('Missing VITE_WEB3FORMS_ACCESS_KEY. Configure the contact form before rendering ContactPage.')
-  }
-
   const [formData, setFormData] = useState(emptyForm)
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
@@ -90,7 +86,8 @@ const ContactPage = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="mt-3 w-full rounded-2xl border border-white/20 bg-white/[0.03] px-4 py-3 text-white outline-none transition-colors focus:border-brand-red"
+                  autoComplete="name"
+                  className="mt-3 w-full rounded-2xl border border-white/20 bg-white/[0.03] px-4 py-3 text-white outline-none transition-colors focus:border-brand-red focus-visible:ring-2 focus-visible:ring-brand-red/60"
                 />
               </div>
 
@@ -105,7 +102,8 @@ const ContactPage = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="mt-3 w-full rounded-2xl border border-white/20 bg-white/[0.03] px-4 py-3 text-white outline-none transition-colors focus:border-brand-red"
+                  autoComplete="email"
+                  className="mt-3 w-full rounded-2xl border border-white/20 bg-white/[0.03] px-4 py-3 text-white outline-none transition-colors focus:border-brand-red focus-visible:ring-2 focus-visible:ring-brand-red/60"
                 />
               </div>
 
@@ -120,7 +118,7 @@ const ContactPage = () => {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="mt-3 w-full rounded-2xl border border-white/20 bg-white/[0.03] px-4 py-3 text-white outline-none transition-colors focus:border-brand-red"
+                  className="mt-3 w-full rounded-2xl border border-white/20 bg-white/[0.03] px-4 py-3 text-white outline-none transition-colors focus:border-brand-red focus-visible:ring-2 focus-visible:ring-brand-red/60"
                 />
               </div>
 
@@ -134,7 +132,14 @@ const ContactPage = () => {
                   : 'We will follow up after reviewing your message.'}
               </p>
             </form>
-          ) : null}
+          ) : (
+            <div className="mt-6 border-l-2 border-brand-red pl-5">
+              <h2 className="text-2xl font-semibold text-white">Contact form temporarily unavailable.</h2>
+              <p className="mt-3 text-sm leading-7 text-zinc-300">
+                Please check back shortly to send a message about joining a Friday session.
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>
